@@ -24,6 +24,12 @@ public class Usuario implements Serializable {
 		this.pais=pais;
 	}
 	
+	public Usuario( String nombre, String email, String pais) {
+		this.nombre=nombre;
+		this.email=email;
+		this.pais=pais;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

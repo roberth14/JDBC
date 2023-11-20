@@ -23,7 +23,7 @@ public class UsuarioDAO {
 	}
 	
 	
-	public void insert (Usuario usuario) {
+	public void insert (Usuario usuario) throws SQLException{
 		try {
 			PreparedStatement preparedStatement = conexion.setPreparedStatement(INSERT_USUARIO_SQL);
 			preparedStatement.setString(1, usuario.getNombre());
@@ -35,7 +35,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	public void delete(int id) {
+	public void delete(int id)  throws SQLException{
 		try {
 			PreparedStatement preparedStatement = conexion.setPreparedStatement(DELETE_USUARIO_SQL);
 			preparedStatement.setInt(1,id);
@@ -46,7 +46,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	public void update (Usuario usuario) {
+	public void update (Usuario usuario) throws SQLException {
 		try {
 			PreparedStatement preparedStatement = conexion.setPreparedStatement(UPDATE_USUARIO_SQL);
 			preparedStatement.setString(1, usuario.getNombre());
@@ -59,7 +59,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	public List<Usuario> selectAll(){
+	public List<Usuario> selectAll() {
 		List<Usuario> usuarios = new ArrayList<>();
 		
 		try {
@@ -82,7 +82,7 @@ public class UsuarioDAO {
 		
 	}
 	
-	public Usuario select(int id){
+	public Usuario select(int id) {
 		Usuario usuario = null;
 		
 		try {
