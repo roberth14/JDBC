@@ -86,7 +86,7 @@ public class UsuarioServlet extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
-		String email = request.getParameter("emai");
+		String email = request.getParameter("email");
 		String pais = request.getParameter("pais");
 
 		Usuario usuario = new Usuario(id,nombre, email, pais);
@@ -128,7 +128,7 @@ public class UsuarioServlet extends HttpServlet {
 
 	private void insertarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		String nombre = request.getParameter("nombre");
-		String email = request.getParameter("emai");
+		String email = request.getParameter("email");
 		String pais = request.getParameter("pais");
 
 		Usuario usuario = new Usuario(nombre, email, pais);

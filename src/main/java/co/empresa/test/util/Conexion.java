@@ -12,16 +12,16 @@ public class Conexion {
 	private PreparedStatement preparedStatement;
 	private static Conexion db;
 
-	private static final String url = "jdbc:mysql://localhos:3306/";
-	private static final String dbName = "prueba";
-	private static final String driver = "co.mysql.jdbc.Driver";
-	private static final String userName = "root";
-	private static final String password = "";
+	private static final String url= "jdbc:mysql://localhost:3306/";
+	private static final String dbName = "sistema";
+    private static final String driver = "com.mysql.cj.jdbc.Driver";
+    private static final String userName = "root";
+    private static final String password = "";
 
 	public Conexion() {
 		try {
 			Class.forName(driver).newInstance();
-			con = (Connection) DriverManager.getConnection(url + dbName, userName, password);
+			con = (Connection) DriverManager.getConnection(url+dbName, userName, password);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
